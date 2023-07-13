@@ -24,18 +24,20 @@ function App() {
 			.catch(() => window.alert('Błąd pobierania danych z NBP'));
 	};
 	return (
-		<div>
-			<h1>Przelicznik walut</h1>
-			<form onSubmit={handleSubmit} class='container'>
-				<input name='amount' type='number' placeholder='Wpisz kwotę' min='0.01' step='0.01' />
-				<select name='currency'>
+		<div className='container'>
+			<h1 className='main-text'>Przelicznik walut</h1>
+			<form onSubmit={handleSubmit} className='form'>
+				<input className='input' name='amount' type='number' placeholder='Wpisz kwotę' min='0.01' step='0.01' />
+				<select name='currency' className='name'>
 					<option value='eur'>EUR</option>
 					<option value='usd'>USD</option>
 					<option value='chf'>CHF</option>
 				</select>
-				<button type='submit'>Przelicz</button>
-				<p class='result'>
-					To <span id='calculateResult'>{result}</span> PLN
+				<button className='button' type='submit'>
+					Przelicz
+				</button>
+				<p className='result'>
+					To : <span id='calculateResult'>{result}</span> PLN
 				</p>
 			</form>
 		</div>
